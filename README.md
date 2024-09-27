@@ -1,6 +1,6 @@
 # Voice Translate Assistant
 
-Voice Translate Assistant is a Python-based voice assistant that allows users to communicate across languages. It listens to speech in one language, translates it into another language, and then speaks the translated text out loud. This tool is ideal for real-time communication and language learning.
+A voice assistant developed in Python that listens to spoken language, translates it in real-time, and responds with audio output in the desired language.
 
 <img width="393" alt="Screenshot 2024-09-28 at 12 11 28 AM" src="https://github.com/user-attachments/assets/d58c6471-e4c7-437a-8677-a6495e22c549">
 
