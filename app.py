@@ -41,6 +41,10 @@ def translate_text(text, target_language):
 # Function to convert text to speech
 def speak_text(text, language):
     try:
+        # Set language to 'hi' if it's Hindi
+        if language == "hi":
+            language = "hi"  # Use just 'hi' for Hindi
+        
         tts = gTTS(text=text, lang=language)
         filename = "temp_audio.mp3"
         tts.save(filename)
@@ -51,11 +55,13 @@ def speak_text(text, language):
 
 # Function to handle the process
 def start_process():
-    input_lang = input_language_var.get()
+    input_lang_name = input_language_var.get()
+    input_lang = languages[input_lang_name]  
     text = listen_to_speech(input_language=input_lang)
     
     if text:
-        target_lang = output_language_var.get()
+        target_lang_name = output_language_var.get()
+        target_lang = languages[target_lang_name]  
         translated_text = translate_text(text, target_language=target_lang)
         if translated_text:
             result_label.config(text=f"Detected: {text}\nTranslated: {translated_text}")
@@ -66,11 +72,10 @@ root = tk.Tk()
 root.title("Speech to Text Translator")
 root.geometry("400x400")
 
-
 languages = {
     "English": "en-IN",
     "Telugu": "te",
-    "Hindi": "hi",
+    "Hindi": "hi", 
     "Spanish": "es",
     "French": "fr",
     "German": "de"
@@ -85,7 +90,7 @@ instructions_label.pack(pady=5)
 
 # Input language selection dropdown
 input_language_var = StringVar(root)
-input_language_var.set(languages["English"])  
+input_language_var.set("English")  
 
 input_language_label = tk.Label(root, text="Choose Input Language", font=("Helvetica", 12))
 input_language_label.pack(pady=5)
@@ -97,8 +102,7 @@ input_language_menu.pack(pady=5)
 
 # Output language selection dropdown
 output_language_var = StringVar(root)
-output_language_var.set(languages["Telugu"])  
-
+output_language_var.set("Telugu")  
 output_language_label = tk.Label(root, text="Choose Translation Language", font=("Helvetica", 12))
 output_language_label.pack(pady=5)
 
