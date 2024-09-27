@@ -68,7 +68,7 @@ def start_process():
 
 
 root = tk.Tk()
-root.title("Speech to Text Translator")
+root.title("Voice Translate Assistant")
 root.geometry("400x400")
 
 languages = {
@@ -81,7 +81,7 @@ languages = {
 }
 
 # Create GUI elements
-title_label = tk.Label(root, text="Speech to Text Translator", font=("Helvetica", 16))
+title_label = tk.Label(root, text="Voice Translate Assistant", font=("Helvetica", 16))
 title_label.pack(pady=10)
 
 instructions_label = tk.Label(root, text="Click the button and speak", font=("Helvetica", 12))
