@@ -41,9 +41,8 @@ def translate_text(text, target_language):
 # Function to convert text to speech
 def speak_text(text, language):
     try:
-        # Set language to 'hi' if it's Hindi
         if language == "hi":
-            language = "hi"  # Use just 'hi' for Hindi
+            language = "hi"  
         
         tts = gTTS(text=text, lang=language)
         filename = "temp_audio.mp3"
